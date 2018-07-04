@@ -5,9 +5,9 @@
 ### Table of contents 
 
 - [Prerequisites](#prerequisites)
-- [How to install and use](#how-to-install-and-use)
+- [How to Test](#how-to-install-and-use)
 - [Built](#built-with)
-- [Dev packages used](#dev-packages-used-)
+- [Dev packages used](#packages-used)
 - [Authors](#authors)
 - [License](#license)
 
