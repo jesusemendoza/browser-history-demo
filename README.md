@@ -5,7 +5,7 @@
 ### Table of contents 
 
 - [Prerequisites](#prerequisites)
-- [How to Test](#how-to-install-and-use)
+- [How to Test](#how-to-test)
 - [Built](#built-with)
 - [Dev packages used](#packages-used)
 - [Authors](#authors)
