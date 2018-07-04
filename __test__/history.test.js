@@ -1,5 +1,6 @@
 'use strict';
 
+const data = require('./data');
 const History = require('../lib/history');
 const faker = require('faker');
 require('jest');
@@ -40,8 +41,8 @@ describe('History Module', function() {
     });
 
     it('should allow a maximum of 50 items at any given time on the history', function() {
-      for(let i = 0 ; i < 49; i++) history.addToHistory(faker.internet.url());
-      expect(history.countPrev).toEqual(50);
+      for(let i = 0 ; i < 48; i++) history.addToHistory(faker.internet.url());
+      expect(history.countPrev).toEqual(history.max-1);
       expect(history.countFwd).toEqual(0);
     });
 
