@@ -10,66 +10,54 @@ describe('History Module', function() {
 
   describe('Valid', function() {
     //generates fake urls to add to history object  
-    for(let i = 0 ; i < 4; i++) history.addToHistory(faker.internet.url());
+    for(let i = 0 ; i < 48; i++) history.addToHistory(faker.internet.url());
     
 
-    it('should read the correct amount of items in each object after 4 items were added to history', function() { 
-      console.log(history, ': right before first test');
-      expect(history.countPrev).toEqual(4);
+    it('should read the correct amount of items in each object after 48 items were added to history', function() { 
+      expect(history.countPrev).toEqual(48);
       expect(history.countFwd).toEqual(0);
     });
 
     it('should read the correct amount of items in each objec after 4 go back calls', function() {
-      for (let i = 0; i< 4; i++) history.goBack(); 
+      for (let i = 0; i< 46; i++) history.goBack(); 
 
-      expect(history.countPrev).toEqual(0);
-      expect(history.countFwd).toEqual(4);
+      expect(history.countPrev).toEqual(2);
+      expect(history.countFwd).toEqual(46);
     });
 
     it('should read the correct amount of items in each object after 2 go forward calls', function() {
-      for (let i = 0; i< 2; i++) history.goForward(); 
+      for (let i = 0; i< 10; i++) history.goForward(); 
   
-      expect(history.countPrev).toEqual(2);
-      expect(history.countFwd).toEqual(2);
+      expect(history.countPrev).toEqual(12);
+      expect(history.countFwd).toEqual(36);
     });
 
     it('should zero out the count forward when a new history is added to the previous stack and add one to previous', function() {
       history.addToHistory(faker.internet.url()); 
     
-      expect(history.countPrev).toEqual(3);
+      expect(history.countPrev).toEqual(13);
       expect(history.countFwd).toEqual(0);
     });
 
-    it('should allow a maximum of 50 items at any given time on the history', function() {
-      for(let i = 0 ; i < 48; i++) history.addToHistory(faker.internet.url());
-      expect(history.countPrev).toEqual(history.max-1);
+    it('should clear everything in history and reset counters to zero when', function() {
+      history.clear();
+      expect(history.countPrev).toEqual(0);
       expect(history.countFwd).toEqual(0);
     });
 
-    it('should clear everything in history and reset counters to zero', function() {
-        history.clear();
-        expect(history.countPrev).toEqual(0);
-        expect(history.countFwd).toEqual(0);
-      });
+    it('should allow add values by count starting at 1', function() {
+      for(let i = 0 ; i <50 ; i++) history.addToHistory(data.before[i]);
+      expect(history.previous).toEqual(data.after);
+      expect(history.countPrev).toEqual(50);
+      expect(history.countFwd).toEqual(0);
+    });
 
+    it('should check that numbers added are appended to the top of the stack and removed from bottom', function() {
+      for(let i = 0 ; i <4 ; i++) history.addToHistory(data.add[i]);
+      expect(history.previous).toEqual(data.afterAdd);
+      expect(history.countPrev).toEqual(50);
+      expect(history.countFwd).toEqual(0);
+    });
 
   });
 });
-
-
-// var history = new History(50)
-// history.addToHistory('A')
-// history.addToHistory('B')
-// history.addToHistory('C')
-// history.addToHistory('D')
-
-// console.log (history, ': before ');
-
-
-// console.log (history, ':previous');
-// history.goForward();
-
-
-// console.log(history, ': forward');
-
-// console.log(history, 'add new his');
