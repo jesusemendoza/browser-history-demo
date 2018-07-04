@@ -16,8 +16,7 @@
 - Node.js
 
 ### How to Test
- - Fork [repo](https://github.com/jesusemendoza/browser-history-demo)
- - Clone into local machine: ```git clone https://github.com/jesusemendoza/browser-history-demo.git```
+ - Clone onto local machine: ```git clone https://github.com/jesusemendoza/browser-history-demo.git```
  - cd into working directory
  - Run ```npm i``` to install all the dev packages needed
  - Run ```npm run test```
