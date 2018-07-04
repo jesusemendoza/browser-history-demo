@@ -1,6 +1,6 @@
 # browser-history-demo
  
-- A demonstration of how browser history works
+- A demonstration of how browser history works using NodeJs
 
 ### Table of contents 
 
