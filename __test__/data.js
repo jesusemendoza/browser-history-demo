@@ -1,4 +1,6 @@
-const before = {
+const data = module.exports = {};
+
+data.before = {
   '0': 'http://maeve.biz',     
   '1': 'https://google.com',
   '2': 'https://hosea.org',
@@ -50,14 +52,14 @@ const before = {
   '48': 'https://francisco.name',
   '49': 'http://gunner.org' };
 
-const add = {
+data.add = {
   '0': 'https://belle.name',
   '1': 'http://kirsten.biz',
   '2': 'http://ivory.biz',
   '3': 'https://vern.name',
 };
 
-const after = {
+data.after = {
   '0': 'http://maeve.biz',     
   '1': 'https://google.com',
   '2': 'https://hosea.org',

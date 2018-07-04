@@ -46,6 +46,12 @@ describe('History Module', function() {
       expect(history.countFwd).toEqual(0);
     });
 
+    it('should clear everything in history and reset counters to zero', function() {
+        history.clear();
+        expect(history.countPrev).toEqual(0);
+        expect(history.countFwd).toEqual(0);
+      });
+
 
   });
 });
