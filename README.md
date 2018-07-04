@@ -32,10 +32,6 @@
 - faker
 - jest
 
-### Version control
-- GitHub 
-- Travis Continuous Integration (CI)
-
 ### Authors
 - [Jesus Mendoza](https://www.linkedin.com/in/jesusemendoza/)
 
